@@ -28,8 +28,8 @@ body {
 /* Overlay buttons (image PNGs) */
 .clickable {
   position: absolute;
-  width: auto;
-  height: auto;
+  width: absolute;
+  height: absolute;
   cursor: pointer;
   z-index: 2;
 }

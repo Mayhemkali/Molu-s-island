@@ -1,0 +1,43 @@
+body {
+  font-family: 'Courier New', monospace;
+  background: #1a1a2e;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+#world {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #292944;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #888;
+}
+
+.pixel-character {
+  font-size: 40px;
+  margin: 10px;
+}
+
+.zone {
+  background: #3d3d5c;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #ffb347;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}

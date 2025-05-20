@@ -20,21 +20,21 @@
   }
 
   /* Sparkle animation — can be rendered before/after buttons visually */
-  .sparkle {
-    position: fixed;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: sparkle 1s linear infinite;
-  }
+.sparkle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1s linear infinite;
+}
 
-  @keyframes sparkle {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.6; }
-    100% { transform: scale(1); opacity: 0; }
-  }
+@keyframes sparkle {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100px); }
+}
+
 
   /* Add button CSS here next... */
 </style>

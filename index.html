@@ -5,16 +5,24 @@
   <title>Molu's Island</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script type="module">
+
+    // import kaboom.js
+    import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
+    
+    // initialize kaboom context
+    kaboom();
+    
+    // add a piece of text at position (120, 80)
+    add([
+        text("hello"),
+        pos(120, 80),
+    ]);
+
+  </script>
 </head>
 <body>
   <div id="island">
-    <!-- Main background image -->
-    <img id="background" src="Main Frame.png" alt="Island background">
-
-    <!-- Overlay Button Images -->
-    <img src="chettu.png" class="clickable" id="tree-btn" />
-    <img src="molu.png" class="clickable" id="molu-btn" />
-    <img src="Untitled design (8).png" class="clickable" id="heart-btn" />
   </div>
 </body>
 </html>

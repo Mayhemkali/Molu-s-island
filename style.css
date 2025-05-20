@@ -6,6 +6,13 @@ body {
   padding: 20px;
 }
 
+#island-bg {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
 #world {
   max-width: 600px;
   margin: 0 auto;

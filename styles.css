@@ -7,7 +7,6 @@ body {
   overflow: hidden;
 }
 
-/* Container for all elements */
 #island {
   position: relative;
   width: 100vw;
@@ -17,7 +16,6 @@ body {
   align-items: center;
 }
 
-/* Main background image */
 #background {
   max-height: 95vh;
   max-width: 95vw;
@@ -28,26 +26,29 @@ body {
 /* Overlay buttons (image PNGs) */
 .clickable {
   position: absolute;
-  width: absolute;
-  height: absolute;
+  width: auto;
+  height: auto;
   cursor: pointer;
   z-index: 2;
 }
 
 /* Position each clickable button manually */
 #tree-btn {
+  position: absolute;
   top: 22%;
   left: 10%;
   width: 120px;
 }
 
 #molu-btn {
+  position: absolute;
   bottom: 14%;
   left: 37%;
   width: 80px;
 }
 
 #heart-btn {
+  position: absolute;
   bottom: 26%;
   left: 72%;
   width: 60px;
@@ -101,6 +102,6 @@ body {
 }
 
 @keyframes sparkle {
-  0%   { opacity: 1; transform: translateY(0); }
+  0% { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-100px); }
 }

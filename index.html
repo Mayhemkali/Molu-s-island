@@ -1,49 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Molu's Island</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      font-family: sans-serif;
-      color: white;
-      background-color: #002343; /* Dark blue as requested */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<style>
+  /* General layout */
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #002343;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-    #background {
-      width: 90vw;         /* Scales image down */
-      max-width: 1000px;   /* Prevents too large */
-      height: auto;
-      display: block;
-    }
+  /* Background image */
+  #background {
+    width: 90vw;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+  }
 
-    .sparkle {
-      position: fixed;
-      width: 5px;
-      height: 5px;
-      background: white;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkle 1s linear infinite;
-    }
+  /* Sparkle animation — can be rendered before/after buttons visually */
+  .sparkle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1s linear infinite;
+  }
 
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.5); opacity: 0.6; }
-      100% { transform: scale(1); opacity: 0; }
-    }
-  </style>
-</head>
-<body>
-  <div id="island">
-    <img src="Main Frame.png" id="background" alt="Island background" />
-  </div>
-</body>
-</html>
+  @keyframes sparkle {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+
+  /* Add button CSS here next... */
+</style>

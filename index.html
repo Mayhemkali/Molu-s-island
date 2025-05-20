@@ -7,26 +7,23 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="world">
-    <div id="characters">
-      <div id="you" class="pixel-character">💐</div>
-      <div id="him" class="pixel-character">👕</div>
-    </div>
+  <div id="world"><div id="world">
+  <img src="island-background.png" alt="Pixel Island" id="island-bg" />
 
-    <div class="zone" id="todo-zone">
-      <h2>🌱 To-Do Garden</h2>
-      <ul id="todo-list"></ul>
-      <input type="text" id="new-task" placeholder="New task..." />
-      <button onclick="addTask()">Add</button>
-    </div>
-
-    <div class="zone" id="compliment-zone">
-      <h2>💌 Compliment Tree</h2>
-      <p id="compliment-text">Click below for a surprise!</p>
-      <button onclick="showCompliment()">Get Compliment</button>
-    </div>
+  <div class="zone" id="todo-zone">
+    <h2>🌱 To-Do Garden</h2>
+    <ul id="todo-list"></ul>
+    <input type="text" id="new-task" placeholder="New task..." />
+    <button onclick="addTask()">Add</button>
   </div>
 
+  <div class="zone" id="compliment-zone">
+    <h2>💌 Compliment Tree</h2>
+    <p id="compliment-text">Click below for a surprise!</p>
+    <button onclick="showCompliment()">Get Compliment</button>
+  </div>
+    
+</div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -5,32 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Molu's Island</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      font-family: 'Courier New', monospace;
-      background: black;
-      color: white;
-    }
+ body {
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+    color: white;
+    background-color: #002343;
+  }
 
-    #island {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      background-color: #002343; /* ✨ Your background */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit: contain;
+  }
 
-    #background {
-      width: 80%; /* 👈 Smaller size */
-      height: auto;
-      max-height: 90vh;
-    }
   </style>
 </head>
 <body>
   <div id="island">
     <img src="Main Frame.png" id="background">
+
+    .sparkle {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle 1s linear infinite;
+    }

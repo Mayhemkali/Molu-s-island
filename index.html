@@ -2,200 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Molu’s Island</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Molu's Island</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
+      overflow: hidden;
       font-family: 'Courier New', monospace;
       background: black;
       color: white;
     }
 
-    canvas {
-      display: block;
-      margin: 0 auto;
-      image-rendering: pixelated;
-    }
-
-    #ui {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 10px;
-      width: 250px;
-      z-index: 10;
-    }
-
-    #todo-list li {
-      font-size: 0.9rem;
-    }
-
-    input, button {
-      font-family: inherit;
-      padding: 5px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    button {
-      background: #ffb347;
-      color: black;
-      cursor: pointer;
-    }
-
-    #compliment {
-      margin-top: 10px;
-      font-style: italic;
+    #island {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
 <body>
-
-<div id="ui">
-  <h3>🌱 To-Do</h3>
-  <ul id="todo-list"></ul>
-  <input type="text" id="task-input" placeholder="New task..." />
-  <button onclick="addTask()">Add</button>
-
-  <h3 style="margin-top:20px;">💌 Compliment</h3>
-  <p id="compliment">Click below!</p>
-  <button onclick="showCompliment()">Get Compliment</button>
-</div>
-
-<script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
-<script>
-  kaboom({
-    width: 768,
-    height: 512,
-    scale: 1,
-    background: [0, 0, 0],
-    canvas: document.createElement("canvas"),
-  });
-
-  document.body.append(kaboom().canvas);
-
-  loadSprite("Main Frame", "Main Frame.png");
-  loadSprite("Tree", "Tree.png");
-  loadSprite("flower", "flower.png");
-  loadSprite("stars", "stars.png");
-  loadSprite("window", "window.png");
-  loadSprite("Molu", "Molu.png");
-  loadSprite("Etta", "Etta.png");
-
-  scene("main", () => {
-    add([sprite("Main Frame"), pos(0, 0)]);
-
-    add([
-      sprite("stars"),
-      pos(0, 0),
-      {
-        opacity: 1,
-        update() {
-          this.opacity = wave(0.6, 1, time() * 2);
-        },
-      },
-    ]);
-
-    add([
-      sprite("Tree"),
-      pos(110, 180),
-      {
-        origin: "center",
-        update() {
-          this.scale = vec2(1 + wave(-0.02, 0.02, time() * 2), 1 + wave(-0.02, 0.02, time() * 2));
-        },
-      },
-    ]);
-
-    add([
-      sprite("flower"),
-      pos(230, 330),
-      {
-        origin: "center",
-        update() {
-          this.angle = wave(-2, 2, time() * 2);
-        },
-      },
-    ]);
-
-    add([
-      sprite("window"),
-      pos(370, 230),
-      {
-        opacity: 1,
-        update() {
-          this.opacity = wave(0.4, 1, time() * 3);
-        },
-      },
-    ]);
-
-    add([
-      sprite("Molu"),
-      pos(300, 330),
-      {
-        update() {
-          this.pos.y = 330 + wave(0, 2, time() * 2);
-        },
-      },
-    ]);
-
-    add([
-      sprite("Etta"),
-      pos(370, 330),
-      {
-        update() {
-          this.pos.y = 330 + wave(0, 2, time() * 2 + 1);
-        },
-      },
-    ]);
-  });
-
-  go("main");
-  console.log("Kaboom scene loaded");
-
-  // To-Do logic
-  function addTask() {
-    const input = document.getElementById("task-input");
-    const task = input.value.trim();
-    if (task !== "") {
-      const li = document.createElement("li");
-      li.textContent = task;
-      document.getElementById("todo-list").appendChild(li);
-      input.value = "";
-    }
-  }
-
-  // Compliment logic
-  const compliments = [
-    "I love that evil little laugh you do when food hits your soul.",
-    "You're 70% hair, 30% heart — and somehow 100% mine.",
-    "Your face when you know I’m about to pounce is better than any movie.",
-    "I don't care how hairy you are — you’re my favorite jungle beast.",
-    "You make me laugh even when I’m trying to stay mad. Rude.",
-    "You radiate compassion like it’s your side quest power.",
-    "Etta, your hugs could fix a collapsing timeline.",
-    "Etta, I love you.",
-    "You’re the only person I’d let steal my fries without consequence.",
-    "You understand my cute aggression and still show up. Brave soul.",
-    "You’re a walking serotonin dispenser with wild eyebrows.",
-    "No matter how weird I get, you never flinch — you match me.",
-    "You make comfort look sexy.",
-    "The world gets loud, but you feel like silence in the best way.",
-    "You’re my favorite human furnace.",
-    "You give 'silly' a whole new romantic dimension.",
-    "Etta, you’re what happens when chaos and cuddles find harmony.",
-    "You laugh like a villain but kiss like a poet.",
-    "You being in my life feels like the universe got one thing absolutely right.",
-    "Hairy, chaotic, lovely — you’re my favorite plot twist.",
-  ];
-
-  function showCompliment() {
-    const random = compliments[Math.floor(Math.random() * compliments.length)];
-    document.getElementById("compliment").textContent = random;
-  }
-</script>
-</body>
-</html>
+  <div id="island">
+    <img src="Main Frame.png" id="background" style="width: 100%; height: 100%; object-fit: cover;">

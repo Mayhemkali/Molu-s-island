@@ -1,40 +1,107 @@
-<style>
-  /* General layout */
-  body {
-    margin: 0;
-    overflow: hidden;
-    font-family: sans-serif;
-    background-color: #002343;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Molu's Island</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+      background-color: #002343;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
 
-  /* Background image */
-  #background {
-    width: 90vw;
-    max-width: 1000px;
-    height: auto;
-    display: block;
-  }
+    #container {
+      position: relative;
+      width: 90vw;
+      max-width: 1000px;
+    }
 
-  /* Sparkle animation — can be rendered before/after buttons visually */
-.sparkle {
-  position: fixed;
-  width: 5px;
-  height: 5px;
-  background: white;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: sparkle 1s linear infinite;
-}
+    #background {
+      width: 100%;
+      display: block;
+    }
 
-@keyframes sparkle {
-  0%   { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-100px); }
-}
+    .clickable {
+      position: absolute;
+      cursor: pointer;
+    }
 
+    /* Positioning your buttons */
+    #tree-button {
+      top: 22%;
+      left: 6%;
+      width: 80px;
+    }
 
-  /* Add button CSS here next... */
-</style>
+    #molu-button {
+      top: 64%;
+      left: 34%;
+      width: 55px;
+    }
+
+    #heart-button {
+      top: 47%;
+      left: 78%;
+      width: 45px;
+    }
+
+    /* Sparkle effect */
+    .sparkle {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: sparkle 1s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-100px); }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="background" src="Main Frame.png" alt="Island background">
+
+    <!-- Overlay Buttons -->
+    <img src="chettu.png" class="clickable" id="tree-button" onclick="toggleTodo()" />
+    <img src="molu.png" class="clickable" id="molu-button" onclick="showCompliment()" />
+    <img src="Untitled design (8).png" class="clickable" id="heart-button" onclick="showDateTime()" />
+  </div>
+
+  <!-- JS actions -->
+  <script>
+    function toggleTodo() {
+      alert("📝 To-Do list clicked!");
+    }
+
+    function showCompliment() {
+      const compliments = [
+        "You're brilliant ✨", "You’re doing amazing 💪", "You're pixel-perfect 🧩",
+        "You light up the code 💡", "Legendary presence 😎", "Clever and kind ❤️",
+        "Charming as ever 🌸", "Radiant soul 🌟", "Sweet as strawberries 🍓",
+        "Courageous heart 🛡️", "Infinite creativity 🎨", "Code wizard 🧙‍♀️",
+        "Always thoughtful 💭", "Irresistibly joyful 😄", "Quietly powerful ⚡",
+        "Heart of gold 💛", "You glow differently 🔥", "Epic energy 🌠",
+        "Gorgeous geek 💻", "Perfectly you 💫"
+      ];
+      const random = compliments[Math.floor(Math.random() * compliments.length)];
+      alert(random);
+    }
+
+    function showDateTime() {
+      const now = new Date();
+      alert(`📅 ${now.toLocaleString()}`);
+    }
+  </script>
+</body>
+</html>

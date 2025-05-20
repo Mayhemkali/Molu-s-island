@@ -6,13 +6,6 @@ body {
   padding: 20px;
 }
 
-#island-bg {
-  width: 100%;
-  border-radius: 20px;
-  display: block;
-  margin: 0 auto;
-}
-
 #world {
   max-width: 600px;
   margin: 0 auto;
@@ -47,4 +40,72 @@ input {
   padding: 5px;
   border-radius: 5px;
   border: none;
+}
+#island {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+/* ✨ Star flicker */
+.flicker {
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* 🌳 Tree light twinkle */
+.twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* 🌸 Flowers swaying */
+.sway {
+  animation: sway 2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(1.5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* 🏠 Glowing house */
+.glow {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.4); }
+}
+
+/* Characters (still for now) */
+.character {
+  animation: idle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes idle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
 }

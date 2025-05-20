@@ -1,0 +1,106 @@
+
+/* General layout */
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background-color: #002343;
+  overflow: hidden;
+}
+
+/* Container for all elements */
+#island {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main background image */
+#background {
+  max-height: 95vh;
+  max-width: 95vw;
+  object-fit: contain;
+  z-index: 0;
+}
+
+/* Overlay buttons (image PNGs) */
+.clickable {
+  position: absolute;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Position each clickable button manually */
+#tree-btn {
+  top: 22%;
+  left: 10%;
+  width: 120px;
+}
+
+#molu-btn {
+  bottom: 14%;
+  left: 37%;
+  width: 80px;
+}
+
+#heart-btn {
+  bottom: 26%;
+  left: 72%;
+  width: 60px;
+}
+
+/* Popup modals */
+.modal {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  z-index: 5;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.modal input[type="text"] {
+  padding: 6px;
+  margin: 10px 0;
+  width: 80%;
+}
+
+.modal button {
+  margin: 5px;
+  padding: 6px 12px;
+  background: #2980b9;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sparkle Animation */
+.sparkle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1s linear infinite;
+  z-index: 3;
+}
+
+@keyframes sparkle {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100px); }
+}

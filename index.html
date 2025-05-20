@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Molu's Island</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
- body {
+  <style>
+    body {
       margin: 0;
       overflow: hidden;
       font-family: sans-serif;
@@ -27,6 +27,34 @@
       width: 100%;
       display: block;
     }
+
+    .clickable {
+      position: absolute;
+      width: auto;
+      height: auto;
+      cursor: pointer;
+    }
+
+    #tree-button {
+      top: 22%;
+      left: 10%;
+      width: 120px;
+    }
+
+    #molu-button {
+      bottom: 14%;
+      left: 37%;
+      width: 80px;
+    }
+
+    #heart-button {
+      bottom: 26%;
+      left: 72%;
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
   <div id="container">
     <!-- Main background image -->
     <img id="background" src="Main Frame.png" alt="Island background">
@@ -36,6 +64,5 @@
     <img src="molu.png" class="clickable" id="molu-button" />
     <img src="Untitled design (8).png" class="clickable" id="heart-button" />
   </div>
-
 </body>
 </html>

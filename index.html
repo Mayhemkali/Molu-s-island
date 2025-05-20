@@ -77,7 +77,6 @@
 
   document.body.append(kaboom().canvas);
 
-  // Load sprites from your root directory (no folder)
   loadSprite("Main Frame", "Main Frame.png");
   loadSprite("Tree", "Tree.png");
   loadSprite("flower", "flower.png");
@@ -92,8 +91,8 @@
     add([
       sprite("stars"),
       pos(0, 0),
-      opacity(),
       {
+        opacity: 1,
         update() {
           this.opacity = wave(0.6, 1, time() * 2);
         },
@@ -103,8 +102,8 @@
     add([
       sprite("Tree"),
       pos(110, 180),
-      origin("center"),
       {
+        origin: "center",
         update() {
           this.scale = vec2(1 + wave(-0.02, 0.02, time() * 2), 1 + wave(-0.02, 0.02, time() * 2));
         },
@@ -114,8 +113,8 @@
     add([
       sprite("flower"),
       pos(230, 330),
-      origin("center"),
       {
+        origin: "center",
         update() {
           this.angle = wave(-2, 2, time() * 2);
         },
@@ -125,8 +124,8 @@
     add([
       sprite("window"),
       pos(370, 230),
-      opacity(),
       {
+        opacity: 1,
         update() {
           this.opacity = wave(0.4, 1, time() * 3);
         },
@@ -155,8 +154,7 @@
   });
 
   go("main");
-console.log("Kaboom scene loaded");
-
+  console.log("Kaboom scene loaded");
 
   // To-Do logic
   function addTask() {
